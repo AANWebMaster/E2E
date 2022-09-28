@@ -28,6 +28,8 @@ if(env === TEST_ENVIRONMENT.DEV) {
     APP_URLS.MEMBERSHIP_APPLICATION = 'https://www.aan.com/MembershipApplication'
 }
 
-export default APP_URLS;
+export {
+    APP_URLS
+};
 
 
