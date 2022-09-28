@@ -1,6 +1,6 @@
 //Use this file to reference application urls in your tests to avoid hard-coding values. Add your own as needed.
 
-export const TEST_ENVIRONMENT = {
+const TEST_ENVIRONMENT = {
     LOCAL: "LOCAL",
     DEV: "DEV",
     PROD: "PROD"
@@ -28,8 +28,6 @@ if(env === TEST_ENVIRONMENT.DEV) {
     APP_URLS.MEMBERSHIP_APPLICATION = 'https://www.aan.com/MembershipApplication'
 }
 
-export {
-    APP_URLS
-};
+module.exports = APP_URLS;
 
 

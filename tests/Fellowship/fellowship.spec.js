@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-const { APP_URLS } = require("../../utilities/url.config.js");
+const APP_URLS = require("../../utilities/url.config");
 
 test("fellowship application is online", async ({ page }) => {
   await page.goto(APP_URLS.FELLOWSHIP);
