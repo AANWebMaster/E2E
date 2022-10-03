@@ -180,7 +180,7 @@ test('creating and editing fellowships', async ({ page }) => {
   await page.locator('#FellowshipInfo_InstitutionName').click();
 
   // Click text=Add New Location
-  await page.locator('text=Add New Location').click();
+  await page.locator('text=Add Location').click();
 
   // Click input[name="LocationName"] >> nth=1
   await expect(page.locator('#LocationName').nth(1)).toBeEmpty();
