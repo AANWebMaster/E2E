@@ -4,8 +4,8 @@ const APP_URLS = require("../../utilities/url.config");
 test("AAN Homepage Google Analytics Configuration", async ({ page }) => {
 
     await page.route(new RegExp(".*gtm\.js.*", "i"), (route, request) => {
-        let scriptRequest = request.url().split("/").at(-1)
-        expect(scriptRequest).toEqual("gtm.js?id=GTM-TL7VTW")
+        let url = request.url().split("/");
+        expect(url[url.length - 1]).toEqual("gtm.js?id=GTM-TL7VTW")
         route.continue();
     })
 
@@ -16,8 +16,8 @@ test("AAN Homepage Google Analytics Configuration", async ({ page }) => {
 test("Brain and Life Homepage Google Analytics Configuration", async ({ page }) => {
 
     await page.route(new RegExp(".*gtm\.js.*", "i"), (route, request) => {
-        let scriptRequest = request.url().split("/").at(-1)
-        expect(scriptRequest).toEqual("gtm.js?id=GTM-P3379VF")
+        let url = request.url().split("/")
+        expect(url[url.length - 1]).toEqual("gtm.js?id=GTM-P3379VF")
         route.continue();
     })
 
