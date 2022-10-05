@@ -4,6 +4,9 @@ const APP_URLS = require("../../utilities/url.config");
 test("fellowship application is online", async ({ page }) => {
   await page.goto(APP_URLS.FELLOWSHIP);
   await expect(page).toHaveTitle("Neurology Fellowships Directory");
+
+  await page.close();
+
 });
 
 test("search fellowships by state button", async ({ page }) => {
@@ -25,6 +28,9 @@ test("search fellowships by state button", async ({ page }) => {
   // Click text=Milwaukee, WI
   let location = page.locator("text=Milwaukee, WI");
   await expect(location).toBeVisible();
+
+  await page.close();
+
 });
 
 test("search fellowships by topic button", async ({ page }) => {
@@ -48,6 +54,9 @@ test("search fellowships by topic button", async ({ page }) => {
   // Click text=Primary Topic: Epilepsy >> td
   let topic = page.locator('text=Primary Topic: Epilepsy');
   await expect(topic).toBeVisible();
+
+  await page.close();
+
 });
 
 test("back to search results page", async ({ page }) => {
@@ -84,7 +93,10 @@ test("back to search results page", async ({ page }) => {
     await page.locator("text=New York Presbyterian Hospital").first().click();
     
     await expect(page).toHaveURL(new RegExp(APP_URLS.FELLOWSHIP + '/Home/ListingView/.*', "i"));
-});
+  
+    await page.close();
+
+  });
 
 
 test('search fellowships by topic input', async ({ page }) => {
@@ -130,6 +142,8 @@ test('search fellowships by topic input', async ({ page }) => {
   await page.locator('select[name="sortBy"]').selectOption('primaryTopic');
   await expect(page).toHaveURL(APP_URLS.FELLOWSHIP + '/Home/SearchPage?name=&searchStates=&searchTopics=176%2c75&currentPage=1&orderBy=primaryTopic');
 
+  await page.close();
+
 });
 
 
@@ -164,6 +178,8 @@ test('search fellowships by selecting topic and state', async ({ page }) => {
 
   // Check if text=Vascular neurology (stroke) is cleared
   await expect(page.locator('text=Vascular neurology (stroke)')).not.toBeChecked();
+
+  await page.close();
 
 });
 
@@ -215,5 +231,7 @@ test('creating and editing fellowships', async ({ page }) => {
 
   // Click h1:has-text("Medical College of Wisconsin")
   await expect(page.locator('h1 >> text=Medical College of Wisconsin')).toBeVisible();
+
+  await page.close();
 
 });
