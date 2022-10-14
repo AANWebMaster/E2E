@@ -14,7 +14,7 @@ let APP_URLS = {
     MEMBER_PROFILE: 'http://localhost:52718/MemberProfile',
     MEMBERSHIP_APPLICATION: 'http://localhost:51719/MembershipApplication',
     BRAINANDLIFE: 'https://www.brainandlife.org/',
-    MEMBER_SEARCH:'https://webdev.aan.com/membersearch'
+    MEMBER_SEARCH:'https://webdev.aan.com/MemberSearch'
 }
 
 if(env === TEST_ENVIRONMENT.DEV) {
@@ -31,7 +31,7 @@ if(env === TEST_ENVIRONMENT.DEV) {
     APP_URLS.MEMBER_PROFILE = 'https://www.aan.com/MemberProfile'
     APP_URLS.MEMBERSHIP_APPLICATION = 'https://www.aan.com/MembershipApplication'
     APP_URLS.BRAINANDLIFE = 'https://www.brainandlife.org/'
-    APP_URLS.MEMBER_SEARCH = 'https://www.aan.com/membersearch'
+    APP_URLS.MEMBER_SEARCH = 'https://www.aan.com/MemberSearch'
 }
 
 module.exports = APP_URLS;
