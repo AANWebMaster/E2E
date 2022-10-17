@@ -17,6 +17,9 @@ test('Search with no parameters', async ({ page }) => {
   let membersNumber = parseInt(membersArray[6])
 
   await expect(membersNumber).toBeGreaterThan(20000);
+
+  await page.close();
+  
 });
 
 test('Search based on city', async ({ page }) => {
@@ -35,9 +38,11 @@ test('Search based on city', async ({ page }) => {
   await page.locator('button[name="Submit"]').click();
 
   // Click text=Karly Brodersen Minneapolis, MN, United States >> td >> nth=1
-  let location = await page.locator('text= Minneapolis, MN, United States').last().innerText();
+  let location = await page.locator('text=Minneapolis, MN, United States').last().innerText();
 
   await expect(location).toContain('Minneapolis');
+
+  await page.close();
 
 });
 
@@ -61,15 +66,16 @@ test('Search by name and location', async ({ page }) => {
   await expect(page).toHaveURL(APP_URLS.MEMBER_SEARCH + '/Home/Results');
 
   // Click text=Gurugram, India
-  let location = await page.locator('text= India').first().innerText();
+  let location = await page.locator('text=India').first().innerText();
 
   // Click text=AAKASH KUMAR
-  await page.locator('text= KUMAR').first().click();
+  await page.locator('text=Kumar').first().click();
 
  // Click text=AAKASH KUMAR
-  let name = await page.locator('text= KUMAR').first().innerText();
+  let name = await page.locator('text=Kumar').first();
 
   await expect(location).toContain('India');
-  await expect(name).toContain('KUMAR');
+  await expect(name).toBeVisible();
 
+  await page.close();
 });
