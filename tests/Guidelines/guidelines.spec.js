@@ -11,8 +11,10 @@ test('Test Guideline About Page Status', async ({ page }) => {
     await page.locator('text=Learn more about Guidelines').click();
     await expect(page).toHaveURL(APP_URLS.AANDOTCOM + '/practice/what-are-clinical-practice-guidelines');
   
-    // Click text=Guidelines FAQ Q. What is the difference between a practice guideline and a qual >> span >> nth=1
-    await page.locator('text=Guidelines FAQ Q. What is the difference between a practice guideline and a qual >> span').nth(1).click();
+    // Click header >> text=Guidelines FAQ
+    await page.locator('text=Guidelines FAQ').click();
+
+    await page.screenshot({ path: 'GuidelinesExpanded.png' });
   
     // Click text=Guidelines Under Development
     await page.locator('text=Guidelines Under Development').click();
@@ -43,7 +45,7 @@ test('Test Guideline About Page Status', async ({ page }) => {
     await expect(page).toHaveURL(APP_URLS.AANDOTCOM + '/Guidelines/Home/Search');
   
     // Click text=Update: Pharmacologic Treatment for Episodic Migraine Prevention in Adults Publi
-    let searchText = await page.locator('text= Migraine ').first().innerText();
+    let searchText = await page.locator('a >> text= Migraine ').first().innerText();
   
     await expect(searchText).toContain("Migraine");
 
