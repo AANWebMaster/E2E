@@ -13,8 +13,9 @@ let APP_URLS = {
     AANDOTCOM: 'http://localhost:65200',
     MEMBER_PROFILE: 'http://localhost:52718/MemberProfile',
     MEMBERSHIP_APPLICATION: 'http://localhost:51719/MembershipApplication',
-    BRAINANDLIFE: 'https://www.brainandlife.org/',
-    MEMBER_SEARCH:'https://webdev.aan.com/MemberSearch'
+    BRAINANDLIFE: 'https://webdev.brainandlife.org',
+    MEMBER_SEARCH:'https://webdev.aan.com/MemberSearch',
+    ACCOUNT_LOGIN: 'https://webdev.aan.com/Authentication/Account/Login?returnUrl='
 }
 
 if(env === TEST_ENVIRONMENT.DEV) {
@@ -22,16 +23,19 @@ if(env === TEST_ENVIRONMENT.DEV) {
     APP_URLS.AANDOTCOM = 'https://webdev.aan.com'
     APP_URLS.MEMBER_PROFILE = 'https://webdev.aan.com/MemberProfile'
     APP_URLS.MEMBERSHIP_APPLICATION = 'https://webdev.aan.com/MembershipApplication'
-    APP_URLS.BRAINANDLIFE = 'https://webdev.brainandlife.org/'
+    APP_URLS.BRAINANDLIFE = 'https://webdev.brainandlife.org'
     APP_URLS.MEMBER_SEARCH = 'https://webdev.aan.com/MemberSearch'
+    APP_URLS.ACCOUNT_LOGIN = 'https://webdev.aan.com/Authentication/Account/Login?returnUrl='
+
 
 } else if(env === TEST_ENVIRONMENT.PROD) {
     APP_URLS.FELLOWSHIP = 'https://www.aan.com/Fellowship'
     APP_URLS.AANDOTCOM = 'https://www.aan.com'
     APP_URLS.MEMBER_PROFILE = 'https://www.aan.com/MemberProfile'
     APP_URLS.MEMBERSHIP_APPLICATION = 'https://www.aan.com/MembershipApplication'
-    APP_URLS.BRAINANDLIFE = 'https://www.brainandlife.org/'
+    APP_URLS.BRAINANDLIFE = 'https://www.brainandlife.org'
     APP_URLS.MEMBER_SEARCH = 'https://www.aan.com/MemberSearch'
+    APP_URLS.ACCOUNT_LOGIN = 'https://www.aan.com/Authentication/Account/Login?returnUrl='
 }
 
 module.exports = APP_URLS;
