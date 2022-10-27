@@ -142,60 +142,63 @@ test('Test generating a guideline report', async ({ page }) => {
   
 });
 
-test.describe.fixme('Test creating a guideline topic', async ({ page }) => {
+test.describe.fixme('Guideline Admin Broken Functionality Tests', () => {
 
-    await userLogin(page, APP_URLS.GUIDELINES);
+    test('Test creating a guideline topic', async ({ page }) => {
 
-    // Go to https://webdev.aan.com/Guidelines/Admin/Topics
-    await page.goto('https://webdev.aan.com/Guidelines/Admin/Topics');
-
-    // Click text=New Topic
-    await page.locator('text=New Topic').click();
-    await expect(page).toHaveURL('https://webdev.aan.com/Guidelines/Admin/Topics/Edit');
-
-    // Click input[name="Name"]
-    await page.locator('input[name="Name"]').click();
-
-    // Fill input[name="Name"]
-    await page.locator('input[name="Name"]').fill('Test Topic');
-
-    // Press Tab
-    await page.locator('input[name="Name"]').press('Tab');
-
-    // Fill textarea[name="Notes"]
-    await page.locator('textarea[name="Notes"]').fill('Adding a test topic to work with');
-
-    // Click text=Save Topic
-    await page.locator('text=Save Topic').click();
-    await expect(page).toHaveURL('https://webdev.aan.com/Guidelines/Admin/Topics/Edit');
-
-});
-
-test.describe.fixme('Test creating a guideline product', async ({ page }) => {
-
-    await userLogin(page, APP_URLS.GUIDELINES);
-
-    // Go to https://webdev.aan.com/Guidelines/Admin/Products
-    await page.goto('https://webdev.aan.com/Guidelines/Admin/Products');
-
-    // Click text=New Product
-    await page.locator('text=New Product').click();
-    await expect(page).toHaveURL('https://webdev.aan.com/Guidelines/Admin/Products/Edit/0');
-
-    // Click input[name="Name"]
-    await page.locator('input[name="Name"]').click();
-
-    // Fill input[name="Name"]
-    await page.locator('input[name="Name"]').fill('Test Project');
-
-    // Press Tab
-    await page.locator('input[name="Name"]').press('Tab');
-
-    // Fill textarea[name="Description"]
-    await page.locator('textarea[name="Description"]').fill('This is a test project to get the program working');
-
-    // Click text=Save Product
-    await page.locator('text=Save Product').click();
-    await expect(page).toHaveURL('https://webdev.aan.com/Guidelines/Admin/Products/Edit/0');
-
+        await userLogin(page, APP_URLS.GUIDELINES);
+    
+        // Go to https://webdev.aan.com/Guidelines/Admin/Topics
+        await page.goto('https://webdev.aan.com/Guidelines/Admin/Topics');
+    
+        // Click text=New Topic
+        await page.locator('text=New Topic').click();
+        await expect(page).toHaveURL('https://webdev.aan.com/Guidelines/Admin/Topics/Edit');
+    
+        // Click input[name="Name"]
+        await page.locator('input[name="Name"]').click();
+    
+        // Fill input[name="Name"]
+        await page.locator('input[name="Name"]').fill('Test Topic');
+    
+        // Press Tab
+        await page.locator('input[name="Name"]').press('Tab');
+    
+        // Fill textarea[name="Notes"]
+        await page.locator('textarea[name="Notes"]').fill('Adding a test topic to work with');
+    
+        // Click text=Save Topic
+        await page.locator('text=Save Topic').click();
+        await expect(page).toHaveURL('https://webdev.aan.com/Guidelines/Admin/Topics/Edit');
+    
+    });
+    
+    test('Test creating a guideline product', async ({ page }) => {
+    
+        await userLogin(page, APP_URLS.GUIDELINES);
+    
+        // Go to https://webdev.aan.com/Guidelines/Admin/Products
+        await page.goto('https://webdev.aan.com/Guidelines/Admin/Products');
+    
+        // Click text=New Product
+        await page.locator('text=New Product').click();
+        await expect(page).toHaveURL('https://webdev.aan.com/Guidelines/Admin/Products/Edit/0');
+    
+        // Click input[name="Name"]
+        await page.locator('input[name="Name"]').click();
+    
+        // Fill input[name="Name"]
+        await page.locator('input[name="Name"]').fill('Test Project');
+    
+        // Press Tab
+        await page.locator('input[name="Name"]').press('Tab');
+    
+        // Fill textarea[name="Description"]
+        await page.locator('textarea[name="Description"]').fill('This is a test project to get the program working');
+    
+        // Click text=Save Product
+        await page.locator('text=Save Product').click();
+        await expect(page).toHaveURL('https://webdev.aan.com/Guidelines/Admin/Products/Edit/0');
+    
+    });
 });
