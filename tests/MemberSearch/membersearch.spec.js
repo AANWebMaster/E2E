@@ -3,11 +3,9 @@ const APP_URLS = require("../../utilities/url.config");
 const { userLogin } = require("../../utilities/user-flows")
 
 test('Search with no parameters', async ({ page }) => {
-
-  await userLogin(page);
   
-  await page.goto(APP_URLS.MEMBER_SEARCH);
-
+  await userLogin(page, APP_URLS.MEMBER_SEARCH);
+  
   // Click button[name="Submit"]
   await page.locator('button[name="Submit"]').click();
   await expect(page).toHaveURL(APP_URLS.MEMBER_SEARCH + '/Home/Results');
@@ -24,10 +22,8 @@ test('Search with no parameters', async ({ page }) => {
 
 test('Search based on city', async ({ page }) => {
 
-  await userLogin(page);
+  await userLogin(page, APP_URLS.MEMBER_SEARCH);
   
-  await page.goto(APP_URLS.MEMBER_SEARCH);
-
   // Click input[name="City"]
   await page.locator('input[name="City"]').click();
 
@@ -48,10 +44,8 @@ test('Search based on city', async ({ page }) => {
 
 test('Search by name and location', async ({ page }) => {
 
-  await userLogin(page);
+  await userLogin(page, APP_URLS.MEMBER_SEARCH);
   
-  await page.goto(APP_URLS.MEMBER_SEARCH);
-
   // Click input[name="LastName"]
   await page.locator('input[name="LastName"]').click();
 
@@ -78,4 +72,5 @@ test('Search by name and location', async ({ page }) => {
   await expect(name).toBeVisible();
 
   await page.close();
+
 });
