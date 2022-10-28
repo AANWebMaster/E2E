@@ -4,6 +4,8 @@ const { userLogin } = require("../../utilities/user-flows");
 
 test('Test Guidelines Edit Functionality', async ({ page }) => {
 
+    test.setTimeout(85000);
+
     await userLogin(page, APP_URLS.GUIDELINES);
 
     // Go to https://webdev.aan.com/guidelines/admin
