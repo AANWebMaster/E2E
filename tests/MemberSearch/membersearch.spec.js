@@ -3,6 +3,8 @@ const APP_URLS = require("../../utilities/url.config");
 const { userLogin } = require("../../utilities/user-flows")
 
 test('Search with no parameters', async ({ page }) => {
+
+  test.setTimeout(85000);
   
   await userLogin(page, APP_URLS.MEMBER_SEARCH);
   
