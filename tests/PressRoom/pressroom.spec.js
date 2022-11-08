@@ -31,7 +31,7 @@ test('Search by Specific Year', async ({ page }) => {
     await page.locator('input[name="Keyword"]').fill('Headache');
 
     // Click text=Search by Keyword: Search >> button
-    await page.locator('text=Search by Keyword: Search >> button[type="submit"]').click();
+    await page.locator('.cta-form >> button').click();
     await expect(page).toHaveURL('https://webdev.aan.com/PressRoom/Home/PressSearch');
 
     // Click li:has-text("Can Acupuncture Reduce Headaches?")
