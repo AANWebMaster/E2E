@@ -18,7 +18,8 @@ let APP_URLS = {
     GUIDELINES: 'https://www.aan.com/practice/guidelines',
     BRAINANDLIFE: 'https://webdev.brainandlife.org',
     MEMBER_SEARCH:'https://webdev.aan.com/MemberSearch',
-    ACCOUNT_LOGIN: 'https://webdev.aan.com/Authentication/Account/Login?returnUrl='
+    ACCOUNT_LOGIN: 'https://webdev.aan.com/Authentication/Account/Login?returnUrl=',
+    PRESS_ROOM_ARCHIVES: 'https://webdev.aan.com/PressRoom/Home/Archives'
 }
 
 if(env === TEST_ENVIRONMENT.DEV) {
@@ -30,6 +31,7 @@ if(env === TEST_ENVIRONMENT.DEV) {
     APP_URLS.MEMBER_SEARCH = 'https://webdev.aan.com/MemberSearch'
     APP_URLS.GUIDELINES = 'https://webdev.aan.com/practice/guidelines'
     APP_URLS.ACCOUNT_LOGIN = 'https://webdev.aan.com/Authentication/Account/Login?returnUrl='
+    APP_URLS.PRESS_ROOM_ARCHIVES = 'https://webdev.aan.com/PressRoom/Home/Archives'
 
 } else if(env === TEST_ENVIRONMENT.PROD) {
     APP_URLS.FELLOWSHIP = 'https://www.aan.com/Fellowship'
@@ -40,6 +42,7 @@ if(env === TEST_ENVIRONMENT.DEV) {
     APP_URLS.MEMBER_SEARCH = 'https://www.aan.com/MemberSearch'
     APP_URLS.GUIDELINES = 'https://www.aan.com/practice/guidelines'
     APP_URLS.ACCOUNT_LOGIN = 'https://www.aan.com/Authentication/Account/Login?returnUrl='
+    APP_URLS.PRESS_ROOM_ARCHIVES = 'https://www.aan.com/PressRoom/Home/Archives'
 }
 
 module.exports = APP_URLS;
