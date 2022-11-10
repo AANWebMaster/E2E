@@ -3,6 +3,8 @@ const APP_URLS = require("../../utilities/url.config");
 
 test('Search by Specific Year', async ({ page }) => {
 
+    test.setTimeout(60000);
+
     // Go to https://webdev.aan.com/PressRoom/Home/Archives
     await page.goto(APP_URLS.PRESS_ROOM_ARCHIVES);
   
