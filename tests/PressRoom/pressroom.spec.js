@@ -49,7 +49,7 @@ test('Search button from main page works', async ({ page }) => {
     await page.goto(APP_URLS.AANDOTCOM + '/AAN-Resources/Details/press-room/');
   
     // Click text=View Archives Here
-    await page.locator('text=View Archives Here').click();
+    await page.locator('text=Search Press Releases').click();
   
     // Click h1:has-text("Press Releases")
     let pageTitle = page.locator('h1:has-text("Press Releases")');
