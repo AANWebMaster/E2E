@@ -46,7 +46,7 @@ test('Search by Specific Year', async ({ page }) => {
 test('Search button from main page works', async ({ page }) => {
 
     // Go to https://webdev.aan.com/AAN-Resources/Details/press-room/
-    await page.goto('https://webdev.aan.com/AAN-Resources/Details/press-room/');
+    await page.goto(APP_URLS.AANDOTCOM + '/AAN-Resources/Details/press-room/');
   
     // Click text=View Archives Here
     await page.locator('text=View Archives Here').click();
