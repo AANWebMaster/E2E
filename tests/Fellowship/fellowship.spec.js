@@ -14,16 +14,20 @@ test("search fellowships by state button", async ({ page }) => {
 
   // Click #states >> text=WI
   await page.locator("[for='chkState_WI']").click();
+
+  //Click MS Topic
+  await page.locator("[for='chkTopic_181']").click();
+
   // Click text=Start Search >> nth=0
   await page.locator("text=Start Search").first().click();
   await expect(page).toHaveURL(
     new RegExp(APP_URLS.FELLOWSHIP + "/Home/Search", "i")
   );
   // Click text=Medical College of Wisconsin
-  await page.locator("text=Medical College of Wisconsin").click();
+  await page.locator("text=Medical College of Wisconsin").first().click();
   await expect(page).toHaveURL(
     APP_URLS.FELLOWSHIP +
-      "/Home/ListingView/1702?searchString=1%7C%7CWI%7C%7Cname"
+      "/Home/ListingView/1862?searchString=1%7C%7CWI%7C181%7Cname"
   );
   // Click text=Milwaukee, WI
   let location = page.locator("text=Milwaukee, WI");
@@ -203,6 +207,9 @@ test('creating and editing fellowships', async ({ page }) => {
 
   // Go to https://aan.com/fellowship
   await page.goto(APP_URLS.FELLOWSHIP);
+
+  //Click Movement Disorders Topic
+  await page.locator("[for='chkTopic_79']").click();
 
   // Click [placeholder="Search by name"]
   await page.locator('[placeholder="Search by name"]').click();
