@@ -83,7 +83,7 @@ test("back to search results page", async ({ page }) => {
     await expect(location).toContainText("NY")
   
     // Click the first search result
-    await page.locator("text=New York Presbyterian Hospital").first().click();
+    await page.locator("text=New York Presbyterian").first().click();
     await expect(page).toHaveURL(new RegExp(APP_URLS.FELLOWSHIP + '/Home/ListingView/.*', "i"));
   
     // Click text=Back to Search Results
@@ -94,7 +94,7 @@ test("back to search results page", async ({ page }) => {
     await expect(location).toBeVisible();
     
     // Click the first location on the list
-    await page.locator("text=New York Presbyterian Hospital").first().click();
+    await page.locator("text=New York Presbyterian").first().click();
     
     await expect(page).toHaveURL(new RegExp(APP_URLS.FELLOWSHIP + '/Home/ListingView/.*', "i"));
   
